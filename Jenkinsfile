@@ -10,7 +10,7 @@ pipeline {
 		    stage('Unit Test') {
 			    steps {
 		    		echo "Running Unit Tests..."
-		    		sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
+		    		sh('pytest ./python/test_exponential.py')
 			    }
 		    }
 		    //stage('Deploy') {
