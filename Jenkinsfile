@@ -1,6 +1,6 @@
-node {
-
-
+pipeline {
+    agent any 
+    stages {
     stage('Info') {
 	// List branch here
 	echo "${env.WORKSPACE}"
@@ -13,5 +13,5 @@ node {
     stage('Deploy') {
         // Deploy to s3
     }
-
+  }
 }
