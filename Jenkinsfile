@@ -1,17 +1,18 @@
 pipeline {
-    agent any 
-    stages {
-    stage('Info') {
-	// List branch here
-	echo "${env.WORKSPACE}"
-	}
-    stage('Unit Test') {
-    	echo('Running Unit Tests...')
-	sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
-    }
-
-    stage('Deploy') {
-        // Deploy to s3
-    }
-  }
+    agent any
+	    stages {
+		    stage('Info') {
+		    // List Branch here
+			    steps {
+			    echo "${env.WORKSPACE}"
+			    }
+		    } 
+		    stage('Unit Test') {
+		    echo "Running Unit Tests..."
+		    sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
+		    }
+		    stage('Deploy') {
+		    // Deploy to s3
+		    }
+	    }
 }
