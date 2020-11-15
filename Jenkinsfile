@@ -1,14 +1,13 @@
 node {
 
-    def workspace = WORKSPACE
 
     stage('Info') {
 	// List branch here
-	echo "${workspace}"
+	echo "${env.WORKSPACE}"
 	}
     stage('Unit Test') {
     	echo('Running Unit Tests...')
-	sh('pytest ${workspace}/python/test_exponential.py')
+	sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
     }
 
     stage('Deploy') {
