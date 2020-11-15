@@ -8,11 +8,13 @@ pipeline {
 			    }
 		    } 
 		    stage('Unit Test') {
-		    echo "Running Unit Tests..."
-		    sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
+			    steps {
+		    		echo "Running Unit Tests..."
+		    		sh('pytest ${env.WORKSPACE}/python/test_exponential.py')
+			    }
 		    }
-		    stage('Deploy') {
+		    //stage('Deploy') {
 		    // Deploy to s3
-		    }
+		    //}
 	    }
 }
