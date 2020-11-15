@@ -4,7 +4,7 @@ node {
 
     stage('Info') {
 	// List branch here
-	echo(${workspace})
+	echo "${workspace}"
 	}
     stage('Unit Test') {
     	echo('Running Unit Tests...')
