@@ -13,8 +13,10 @@ pipeline {
 		    		sh('pytest ./python/test_exponential.py')
 			    }
 		    }
-		    //stage('Deploy') {
-		    // Deploy to s3
-		    //}
+		    stage('Deploy') {
+			    steps{
+			    sh('aws s3 ls --endpoint http://localhost:8000/ s3://localhost/mybucket')
+			    }
+		    }
 	    }
 }
