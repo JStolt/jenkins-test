@@ -6,7 +6,7 @@ node {
 	}
     stage('Unit Test') {
     	echo('Running Unit Tests...')
-	sh('pytest python/test_exponential.py')
+	sh('python -m pytest python/test_exponential.py')
     }
 
     stage('Deploy') {
